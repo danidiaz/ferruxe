@@ -3,6 +3,7 @@ fn main() {
 
     // https://doc.rust-lang.org/book/ch03-05-control-flow.html
     // https://doc.rust-lang.org/rust-by-example/flow_control.html
+    // https://doc.rust-lang.org/reference/expressions/loop-expr.html
     let mut _foo : () = loop {
         break;
     };
