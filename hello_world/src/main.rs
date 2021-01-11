@@ -23,8 +23,22 @@ fn main() {
     let mut foo3 : u32 = 7;
     let xee: &mut u32 = &mut foo3;
     *xee = 4;
-    // It seems that dereferncing is required here
+    // It seems that dereferencing is required here
     // "consider dereferencing here to assign to the mutable borrowed piece of memory"
     // xee = 3; // Seems like de-referencig *is* necessary here...
     println!("This xee: {}",xee);
+
+    // more reference mind-twisters
+    let mut xii : &mut u32 = &mut foo3;
+    // can't have two mutable borrows at the same time
+    // "cannot borrow `foo3` as mutable more than once at a time"
+    // It would be ok if xii were no longer used after the second borrow.
+    //
+    // let mut xii2 : &mut u32 = &mut foo3;
+    // 
+    println!("This xii: {}",xii);
+    let mut foo4 : u32 = 79;
+    // here we are changing the *reference*, not the value...
+    xii = &mut foo4;
+    println!("This xii: {}",xii);
 }
