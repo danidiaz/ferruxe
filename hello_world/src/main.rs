@@ -41,4 +41,8 @@ fn main() {
     // here we are changing the *reference*, not the value...
     xii = &mut foo4;
     println!("This xii: {}",xii);
+
+    // if references are sorta kinda pointers, I guess we can have mutable references to immutable
+    // memory, and immutable references to mutable memory
+    //
 }
